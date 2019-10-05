@@ -15,8 +15,8 @@ class CreateQltvTheloaiTable extends Migration
     {
         Schema::create('qltv_theloai', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('matheloai',20);
             $table->string('tentheloai', 500);
-            $table->text('mota');
         });
     }
 

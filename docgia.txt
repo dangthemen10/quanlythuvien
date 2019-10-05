@@ -1,0 +1,65 @@
+Schema::create('qltv_docgia', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('madocgia',50);
+            $table->string('tendocgia', 200);
+            $table->string('chucvu', 200);
+            $table->string('gioitinh',200);
+            $table->string('namsinh',200);
+            $table->string('diachi',500);
+            $table->string('sdt',25);
+            $table->string('email',200);
+            $table->string('quequan',200);
+            $table->text('anh');
+
+            // ccot khoa ngoai
+            $table->integer('nganh_id')->unsigned();
+
+            //Tao lien ket khoa ngoai
+            $table->foreign('nganh_id')->references('id')->on('qltv_nganh');
+        });
+
+
+
+
+
+seeder
+
+$faker =Faker\Factory::create('vi_VN'); //location ISO
+        $list = [];
+        $types = ["Hiếu", "Khang", "Hùng", "Tuấn", "Giang", "Anh", "Hà", "Kiều", "Phượng"];
+        $types1 = ["Anh", "Văn", "Hải", "Ngọc", "Thị", "Kim", "Bảo", "Gia", "Hoàng"];
+        $types2 = ["Phạm", "Nguyễn", "Lê", "Trịnh", "Trần", "Huỳnh", "Phan", "Trương", "Dương"];
+        $types3 = ["Nam", "Nữ"];
+        $types4 = ["Giảng Viên", "Sinh Viên"];
+        $types5 = ["Khoa CNTT & TT", "Khoa Sư Phạm", "Khoa Kinh Tế", "Khoa Công Nghệ", "Khoa Môi Trường", "Khoa Khoa Học Chính Trị", "Khoa Luật", "Khoa Khoa Học Xã Hội", "Khoa Nông Nghiệp", "Khoa Khoa Học Tự Nhiên", "Khoa Thủy Sản"];
+        8$cntt = ["Khoa học máy tính", "Mạng máy tính và truyền thông dữ liệu", "Kỹ thuật phần mềm", "Hệ thống thông tin", "Công nghệ thông tin", "Tin học ứng dụng", "Công nghệ thông tin - HA", "Công nghệ thông tin - CLC"];
+        8$sp = ["Sư phạm Sinh học", "Sư phạm Hóa học", "Sư phạm Địa lý", "Sư phạm Ngữ văn", "Sư phạm Lịch sử", "Giáo dục Tiểu học", "Giáo dục thể chất", "Giáo dục công dân"];
+        9$kt = ["Kế toán", "Kiểm toán", "Kinh doanh nông nghiệp", "Kinh doanh quốc tế", "Kinh tế", "Kinh doanh thương mại", "Marketing", "Quản trị dịch vụ DL và lữ hành", "Quản trị kinh doanh"];
+        14$cn = ["Công nghệ kỹ thuật hóa học", "Cơ khí chế biến", "Cơ khí chế tạo máy", "Kỹ thuật điện", "Kỹ thuật cơ - điện tử", "Cơ khí ôtô", "Kỹ thuật điện tử - viễn thông", "KT điều khiển và tự động hóa", "Kỹ thuật máy tính", "Kỹ thuật Vật liệu", "Kỹ thuật xây dựng", "KTXD công trình giao thông", "Quản lý công nghiệp", "KT xây dựng công trình thủy"];
+        5$mt = ["QL tài nguyên và môi trường", "Khoa học môi trường", "Kỹ thuật môi trường", "Kỹ thuật tài nguyên nước", "Quản lý đất đai"];
+        2$ct = ["Chính trị học", "Triết học"];
+        3$luat = ["Luật Hành chính", "Luật Thương mại", "Luật Tư pháp"];
+        6$xh = ["Ngôn ngữ Anh", "Ngôn ngữ Pháp", "Phiên dịch-Biên dịch tiếng Anh", "Việt Nam học", "Văn học", "Thông tin - Thư viện"];
+        14$ng = ["Bảo vệ thực vật", "Chăn nuôi", "Công nghệ giống cây trồng", "Công nghệ sau thu hoạch", "Dược Thú y", "CN rau hoa quả và cảnh quan", "Công nghệ thực phẩm", "Khoa học cây trồng", "Nông học", "Nông nghiệp công nghệ cao", "Phát triển nông thôn", "Quản lý đất và CN phân bón", "Sinh học ứng dụng", "Thú y"];
+        8$tn = ["Công nghệ sinh học", "Công nghệ Sinh học - CTTT", "Hóa dược", "Hóa học", "Vi sinh vật học", "Vật lý kỹ thuật", "Toán ứng dụng", "Sinh học"];
+        4$ts = ["Quản lý thủy sản", "Nuôi trồng thủy sản", "Công nghệ chế biến thủy sản", "Bệnh học thủy sản"];
+        sort($types);
+        for ($i=1; $i <= 10; $i++) {
+            array_push($list, [
+                'id'                => $i,
+                'madocgia'          => 'DG'.$i,
+                'tendocgia'         => $faker->randomElement($types .$types1 .$types2),
+                'chucvu'            => $faker->randomElement($types4),
+                'bomon'             => $faker->jobTitle(),
+                'khoa'              => $faker->text(),
+                'gioitinh'          => $faker->randomElement($types3),
+                'namsinh'           => $faker->text(),
+                'diachi'            => $faker->address(),
+                'sdt'               => $faker->PhoneNumber(),
+                'email'             => $faker->email(),
+                'quequan'           => $faker->country(),
+                'anh'               => $faker->imageUrl(300, 300)
+                
+            ]);
+        }
+        DB::table('Qltv_docgia')->insert($list);

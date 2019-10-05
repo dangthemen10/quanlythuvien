@@ -15,8 +15,8 @@ class CreateQltvNxbTable extends Migration
     {
         Schema::create('qltv_nxb', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('manxb', 20);
             $table->string('tennxb', 500);
-            $table->text('mota');
         });
     }
 
