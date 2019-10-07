@@ -14,9 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/tempblate', function () {
-    return view('backend/layouts/master');
-});
 
 //Route of thể loại sách
 Route::get('/admin/theloaisach', 'Backend\TheloaiController@index')->name('backend.theloai.index');
@@ -34,6 +31,22 @@ Route::get('/admin/nxb/{id}/edit', 'Backend\NxbController@edit')->name('backend.
 Route::post('/admin/nxb/{id}/update', 'Backend\NxbController@update')->name('backend.nxb.update');
 Route::delete('/admin/nxb/{id}', 'Backend\NxbController@destroy')->name('backend.nxb.destroy');
 Route::get('/admin/nxb/print', 'Backend\NxbController@print')->name('backend.nxb.print');
+//Route of khoa
+Route::get('/admin/khoa', 'Backend\KhoaController@index')->name('backend.khoa.index');
+Route::get('/admin/khoa/create', 'Backend\KhoaController@create')->name('backend.khoa.create'); 
+Route::post('/admin/khoa/store', 'Backend\KhoaController@store')->name('backend.khoa.store'); 
+Route::get('/admin/khoa/{id}/edit', 'Backend\KhoaController@edit')->name('backend.khoa.edit');
+Route::post('/admin/khoa/{id}/update', 'Backend\KhoaController@update')->name('backend.khoa.update');
+Route::delete('/admin/khoa/{id}', 'Backend\KhoaController@destroy')->name('backend.khoa.destroy');
+Route::get('/admin/khoa/print', 'Backend\KhoaController@print')->name('backend.khoa.print');
+//Route of nganh
+Route::get('/admin/nganh', 'Backend\NganhController@index')->name('backend.nganh.index');
+Route::get('/admin/nganh/create', 'Backend\NganhController@create')->name('backend.nganh.create'); 
+Route::post('/admin/nganh/store', 'Backend\NganhController@store')->name('backend.nganh.store'); 
+Route::get('/admin/nganh/{id}/edit', 'Backend\NganhController@edit')->name('backend.nganh.edit');
+Route::post('/admin/nganh/{id}/update', 'Backend\NganhController@update')->name('backend.nganh.update');
+Route::delete('/admin/nganh/{id}', 'Backend\NganhController@destroy')->name('backend.nganh.destroy');
+Route::get('/admin/nganh/print', 'Backend\NganhController@print')->name('backend.nganh.print');
 //Route of sách
 Route::get('/admin/sach', 'Backend\SachController@index')->name('backend.sach.index');
 Route::get('/admin/sach/create', 'Backend\SachController@create')->name('backend.sach.create'); 

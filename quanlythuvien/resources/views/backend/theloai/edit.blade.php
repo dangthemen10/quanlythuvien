@@ -6,7 +6,7 @@ Quản Trị - Hiệu Chỉnh Thể Loại Sách
 Hiệu Chỉnh Thể Loại Sách
 @endsection
 @section('content')
-<form name="frmCreateTheloai" method="post" action="{{ route('backend.theloai.update',['id'=>$theloai->id]) }}" enctype="multipart/form-data">
+<form name="frmEditTheloai" method="post" action="{{ route('backend.theloai.update',['id'=>$theloai->id]) }}" enctype="multipart/form-data">
     {{ csrf_field() }}
   <div class="form-group" >
     <label for="matheloai">Mã Thể Loại Sách</label>

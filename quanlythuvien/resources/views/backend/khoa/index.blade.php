@@ -1,50 +1,32 @@
 @extends('backend.layouts.master')
 @section('title')
-Quản Trị - Sách
+Quản Trị - Khoa
 @endsection
 @section('feature-title')
-Danh Sách Sách
+Danh Sách Khoa
 @endsection
 @section('content')
-<a href="{{ route('backend.sach.create') }}" class="btn btn-primary">Thêm mới</a>
-<a href="{{ route('backend.sach.print') }}" class="btn btn-success">In Danh Sách</a>
+<a class="btn btn-primary" href="{{ route('backend.khoa.create') }}" >Thêm Mới</a>
+<a href="{{ route('backend.khoa.print') }}" class="btn btn-success">In danh sách</a>
 <table class="table table-bordered table-hover">
     <thead>
-        <tr class="table-success" >
-            <th>Mã Sách</th>
-            <th>Tên Sách</th>
-            <th>Tên Tác Giả</th>
-            <th>Ảnh</th>
-            <th>Thể Loại</th>
-            <th>Nhà Xuất Bản</th>
-            <th>Số Lượng Sách</th>
-            <th>Trạng Thái Sách</th>         
-            <th colspan="2">Chức Năng</th>
+        <tr class="table-success" style="text-align: center;">
+            <th>Mã Khoa</th>
+            <th>Tên Khoa</th>
+            <th colspan="3" >Chức Năng</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($listSach as $sach)
+        @foreach($listKhoa as $khoa)
         <tr>
-            <td>{{$sach->masach}}</td>
-            <td>{{$sach->tensach}}</td>
-            <td>{{$sach->tentacgia}}</td>
+            <td>{{$khoa->makhoa}}</td>
+            <td>{{$khoa->tenkhoa}}</td>
             <td>
-                <img src="{{ asset('storage/uploads/'. $sach->anh) }}" width="80px" height="80px"/>
-            </td>
-            <td>{{$sach->theloai->tentheloai}}</td>
-            <td>{{$sach->nxb->tennxb}}</td>
-            <td>{{$sach->soluong}} Cuốn</td>
-            @if($sach->trangthaisach == 1)
-                <td>Còn Sách</td>
-            @else
-                <td>Sách đã hết</td>
-            @endif
-            <td>
-                <a class="btn btn-primary" href="{{ route('backend.sach.edit', ['id'=>$sach->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.khoa.edit', ['id'=>$khoa->id]) }}">Edit</a>
                 
             </td>
             <td>
-                <form name="frmDeleteSach" id="frmDeleteSach" method="post" action="{{ route('backend.sach.destroy', ['id' => $sach->id]) }}">
+                <form name="frmDeleteKhoa" id="frmDeleteKhoa" method="post" action="{{ route('backend.khoa.destroy', ['id' => $khoa->id]) }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="DELETE"/>
                     <button class="btn btn-danger btn-icon-split btn-delete">
@@ -59,7 +41,6 @@ Danh Sách Sách
         @endforeach
     <tbody>
 </table>
-
 {{ $users->links() }}
 @endsection
 @section('custom-scripts')
@@ -84,7 +65,7 @@ Danh Sách Sách
                     )
 
                     //submit form
-                    $(this).parent('#frmDeleteSach').submit();
+                    $(this).parent('#frmDeleteKhoa').submit();
                 }
                 })
         })

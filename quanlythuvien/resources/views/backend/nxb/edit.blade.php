@@ -6,7 +6,7 @@ Quản Trị - Hiệu Chỉnh Nhà Xuất Bản
 Hiệu Chỉnh Nhà Xuất Bản
 @endsection
 @section('content')
-<form name="frmCreateCategory" method="post" action="{{ route('backend.nxb.update',['id'=>$nxb->id]) }}" enctype="multipart/form-data">
+<form name="frmEditNxb" method="post" action="{{ route('backend.nxb.update',['id'=>$nxb->id]) }}" enctype="multipart/form-data">
     {{ csrf_field() }}
   <div class="form-group" >
     <label for="manxb">Mã Nhà Xuất Bản</label>
