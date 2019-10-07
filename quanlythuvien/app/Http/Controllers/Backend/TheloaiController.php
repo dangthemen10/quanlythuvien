@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Qltv_Theloai;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\TheloaiCreateRequest;
+use Illuminate\Support\Facades\Storage;
 
 class TheloaiController extends Controller
 {
@@ -38,7 +40,7 @@ class TheloaiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TheloaiCreateRequest $request)
     {
         $theloai = new Qltv_Theloai();
         $theloai->matheloai = $request->matheloai;

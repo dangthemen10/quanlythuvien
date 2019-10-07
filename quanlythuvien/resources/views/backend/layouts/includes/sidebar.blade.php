@@ -62,16 +62,14 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Sản Phẩm</span>
+          <span>Sách</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Chức Năng Sản Phẩm:</h6>
-            <a class="collapse-item" href="#">Danh Sách Sản Phẩm</a>
-            <a class="collapse-item" href="#">Danh Sách Khách Hàng</a>
-            <a class="collapse-item" href="#">Danh Sách Nhân Viên</a>
-            <a class="collapse-item" href="#">Danh Sách Loại Sản Phẩm</a>
-            <a class="collapse-item" href="#">Thêm mới</a>
+            <h6 class="collapse-header">Chức Năng Sách:</h6>
+            <a class="collapse-item" href="{{ route('backend.sach.index') }}">Danh Sách Sách</a>
+            <a class="collapse-item" href="{{ route('backend.sach.print') }}">In danh sách</a>
+            <a class="collapse-item" href="{{ route('backend.sach.create') }}">Thêm mới</a>
           </div>
         </div>
       </li>

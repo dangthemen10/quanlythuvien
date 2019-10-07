@@ -8,7 +8,7 @@ class Qltv_Sach extends Model
 {
     public $timestamps = false;
     protected $table        = 'qltv_sach';
-    protected $fillable     = ['masach', 'tensach', 'tentacgia', 'mota', 'anh', 'theloai_id', 'nxb_id'];
+    protected $fillable     = ['masach', 'tensach', 'tentacgia', 'soluong','trangthaisach', 'anh', 'theloai_id', 'nxb_id'];
     protected $guarded      = ['id'];
     protected $primaryKey   = 'id';
     //Tạo quan hệ vs the loai và nxb

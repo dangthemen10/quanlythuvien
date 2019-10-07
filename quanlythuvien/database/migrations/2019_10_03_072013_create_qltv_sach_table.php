@@ -18,7 +18,8 @@ class CreateQltvSachTable extends Migration
             $table->string('masach',50);
             $table->string('tensach',500);
             $table->string('tentacgia',200);
-            $table->text('mota');
+            $table->decimal('soluong', 18, 0);
+            $table->string('trangthaisach'); // 1 còn sách 2 hết sách
             $table->text('anh');
 
             // ccot khoa ngoai

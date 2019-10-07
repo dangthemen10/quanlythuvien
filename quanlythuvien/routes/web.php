@@ -34,3 +34,11 @@ Route::get('/admin/nxb/{id}/edit', 'Backend\NxbController@edit')->name('backend.
 Route::post('/admin/nxb/{id}/update', 'Backend\NxbController@update')->name('backend.nxb.update');
 Route::delete('/admin/nxb/{id}', 'Backend\NxbController@destroy')->name('backend.nxb.destroy');
 Route::get('/admin/nxb/print', 'Backend\NxbController@print')->name('backend.nxb.print');
+//Route of sách
+Route::get('/admin/sach', 'Backend\SachController@index')->name('backend.sach.index');
+Route::get('/admin/sach/create', 'Backend\SachController@create')->name('backend.sach.create'); 
+Route::post('/admin/sach/store', 'Backend\SachController@store')->name('backend.sach.store'); 
+Route::get('/admin/sach/{id}/edit', 'Backend\SachController@edit')->name('backend.sach.edit');
+Route::post('/admin/sach/{id}/update', 'Backend\SachController@update')->name('backend.sach.update');
+Route::delete('/admin/sach/{id}', 'Backend\SachController@destroy')->name('backend.sach.destroy');
+Route::get('/admin/sach/print', 'Backend\SachController@print')->name('backend.sach.print');

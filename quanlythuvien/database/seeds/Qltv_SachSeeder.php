@@ -25,7 +25,8 @@ class Qltv_SachSeeder extends Seeder
                 'masach'     => $faker->numerify('Sach_######'),
                 'tensach'    => $types[$i-1],
                 'tentacgia'  =>$faker->randomElement($types1),
-                'mota'      =>$faker->text(),
+                'soluong'       =>$faker->numberBetween(1, 100),
+                'trangthaisach'      =>$faker->numberBetween(1, 2),
                 'anh'       =>$faker->imageUrl(300, 300),
 
                 //khoas ngoai

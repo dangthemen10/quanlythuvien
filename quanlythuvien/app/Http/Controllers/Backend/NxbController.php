@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Qltv_Nxb; //Muốn sử dụng csdl thì phải use
 use Illuminate\Support\Facades\DB; 
+use App\Http\Requests\NxbCreateRequest; 
 
 class NxbController extends Controller
 {
@@ -38,7 +39,7 @@ class NxbController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NxbCreateRequest $request)
     {
         $nxb = new Qltv_Nxb();
         $nxb->manxb = $request->manxb;
