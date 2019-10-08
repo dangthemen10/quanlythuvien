@@ -26,7 +26,6 @@ class NganhCreateRequest extends FormRequest
         return [
             'manganh'               => 'required|min:3|max:20|unique:qltv_nganh', //tên table qtlv_nganh
             'tennganh'              => 'required|min:3|max:500',
-            'khoa_id'               => 'required',
         ];
     }
     public function messages() {
@@ -38,9 +37,7 @@ class NganhCreateRequest extends FormRequest
 
             'tennganh.required'     => 'Vui lòng nhập tên ngành',
             'tennganh.min'          => 'Vui lòng nhập tên ngành ít nhất 3 ký tự',
-            'tennganh.max'          => 'Vui lòng nhập tên ngành tối đa 500 ký tự',
-
-            'khoa_id.required'      => 'Vui lòng chọn khoa'
+            'tennganh.max'          => 'Vui lòng nhập tên ngành tối đa 500 ký tự'
         ];
     }
 }

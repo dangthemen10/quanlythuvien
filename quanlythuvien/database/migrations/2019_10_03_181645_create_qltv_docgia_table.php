@@ -27,9 +27,11 @@ class CreateQltvDocgiaTable extends Migration
             $table->text('anh');
 
             // ccot khoa ngoai
+            $table->integer('khoa_id')->unsigned();
             $table->integer('nganh_id')->unsigned();
 
             //Tao lien ket khoa ngoai
+            $table->foreign('khoa_id')->references('id')->on('qltv_khoa');
             $table->foreign('nganh_id')->references('id')->on('qltv_nganh');
         });
 

@@ -14,6 +14,7 @@ class Qltv_DocgiaSeeder extends Seeder
         //
         $faker =Faker\Factory::create('vi_VN'); //location ISO
         $list = [];
+        $dsKhoa = DB::table('qltv_khoa')->pluck('id'); //SELECT id From qltv_khoa
         $dsNganh = DB::table('qltv_nganh')->pluck('id'); //SELECT id From qltv_nganh
         $types = ["Hiếu", "Khang", "Hùng", "Tuấn", "Giang", "Anh", "Hà", "Kiều", "Phượng"];
         $types1 = ["Anh", "Văn", "Hải", "Ngọc", "Thị", "Kim", "Bảo", "Gia", "Hoàng"];
@@ -21,7 +22,7 @@ class Qltv_DocgiaSeeder extends Seeder
         $types3 = ["Nam", "Nữ"];
         $types4 = ["Giảng Viên", "Sinh Viên"];
         sort($types);
-        for ($i=1; $i <= 10; $i++) {
+        for ($i=1; $i <= 5; $i++) {
             array_push($list, [
                 'id'                => $i,
                 'madocgia'          => $faker->numerify('DG_######'),
@@ -36,6 +37,7 @@ class Qltv_DocgiaSeeder extends Seeder
                 'anh'               => $faker->imageUrl(300, 300),
 
                 //khoas ngoai
+                'khoa_id'       => $faker->randomElement($dsKhoa),
                 'nganh_id'       => $faker->randomElement($dsNganh)
                 
             ]);

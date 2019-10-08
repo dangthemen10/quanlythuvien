@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Qltv_Nganh; //Muốn sử dụng csdl thì phải use
-use App\Qltv_Khoa;
 use Illuminate\Support\Facades\DB; 
 use App\Http\Requests\NganhCreateRequest; 
 
@@ -32,9 +31,7 @@ class NganhController extends Controller
      */
     public function create()
     {
-        $listKhoa = Qltv_Khoa::all();
-        return view('backend.nganh.create')
-            ->with('listKhoa',$listKhoa);
+        return view('backend.nganh.create');
     }
 
     /**
@@ -48,7 +45,6 @@ class NganhController extends Controller
         $nganh = new Qltv_Nganh();
         $nganh->manganh = $request->manganh;
         $nganh->tennganh = $request->tennganh;
-        $nganh->khoa_id = $request->khoa_id;
 
         $nganh->save();
 
@@ -75,9 +71,7 @@ class NganhController extends Controller
     public function edit($id)
     {
         $nganh = Qltv_Nganh::find($id); //SELECT * from qltv_nganh where id='id'
-        $listKhoa = Qltv_Khoa::all();
         return view('backend.nganh.edit')
-            ->with('listKhoa',$listKhoa)
             ->with('nganh', $nganh);
     }
 
@@ -93,7 +87,6 @@ class NganhController extends Controller
         $nganh = Qltv_Nganh::find($id);
         $nganh->manganh = $request->manganh;
         $nganh->tennganh = $request->tennganh;
-        $nganh->khoa_id = $request->khoa_id;
 
         $nganh->save();
 

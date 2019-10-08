@@ -32,18 +32,6 @@ Thêm mới Ngành
     <label for="tennganh">Tên Ngành</label>
     <input type="text" class="form-control" id="tennganh" name="tennganh" aria-describedby="tennganhHelp" placeholder="Nhập Tên ngành . . ." value="{{ old('tennganh') }}">
   </div> 
-  <div class="form-group">
-    <label for="khoa_id">Khoa</label>
-    <select id="khoa_id" name="khoa_id" class="form-control">
-      @foreach($listKhoa as $khoa)
-        @if(old('khoa_id') == $khoa->id)
-        <option value="{{ $khoa->id }}" selected>{{ $khoa->tenkhoa }}</option>
-        @else
-        <option value="{{ $khoa->id }}">{{ $khoa->tenkhoa }}</option>
-        @endif
-      @endforeach
-    </select>
-  </div>
   <a class="btn btn-primary" href="{{ route('backend.nganh.index') }}" class="btn">Quay về</a>
   <button type="submit" class="btn btn-primary">Lưu</button>
 </form>
@@ -64,9 +52,6 @@ Thêm mới Ngành
           minlength: 3,
           maxlength: 500
         },
-        khoa_id: {
-          required: true
-        },
       },
       messages: {
         manganh: {
@@ -78,9 +63,6 @@ Thêm mới Ngành
           required: "Vui lòng nhập tên ngành",
           minlength: "Tên ngành phải có ít nhất 3 ký tự",
           maxlength: "Tên ngành không được vượt quá 500 ký tự"
-        },
-        khoa_id: {
-          required: "Vui lòng chọn khoa"
         },
       },
       errorElement: "em",

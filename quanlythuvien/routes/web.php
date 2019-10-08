@@ -55,3 +55,11 @@ Route::get('/admin/sach/{id}/edit', 'Backend\SachController@edit')->name('backen
 Route::post('/admin/sach/{id}/update', 'Backend\SachController@update')->name('backend.sach.update');
 Route::delete('/admin/sach/{id}', 'Backend\SachController@destroy')->name('backend.sach.destroy');
 Route::get('/admin/sach/print', 'Backend\SachController@print')->name('backend.sach.print');
+//Route of Đọc giả
+Route::get('/admin/docgia', 'Backend\DocgiaController@index')->name('backend.docgia.index');
+Route::get('/admin/docgia/create', 'Backend\DocgiaController@create')->name('backend.docgia.create'); 
+Route::post('/admin/docgia/store', 'Backend\DocgiaController@store')->name('backend.docgia.store'); 
+Route::get('/admin/docgia/{id}/edit', 'Backend\DocgiaController@edit')->name('backend.docgia.edit');
+Route::post('/admin/docgia/{id}/update', 'Backend\DocgiaController@update')->name('backend.docgia.update');
+Route::delete('/admin/docgia/{id}', 'Backend\DocgiaController@destroy')->name('backend.docgia.destroy');
+Route::get('/admin/docgia/print', 'Backend\DocgiaController@print')->name('backend.docgia.print');

@@ -1,7 +1,7 @@
 @extends('print.layout.paper')
 
 @section('title')
-In danh sách Ngành Học
+In danh sách Sách
 @endsection
 
 @section('paper-size')
@@ -33,20 +33,38 @@ A4
         <table border="0" width="100%" style="border-collapse: collapse;">
             <tr>
                 <td style="text-align: center;">
-                    <span style="font-weight: bold;font-size: 1.5em;">Danh Sách Sách</span>
+                    <span style="font-weight: bold;font-size: 1.5em;">Danh Sách Đọc Giả</span>
                 </td>
             </tr>
         </table>
 
         <table border="1" width="100%" style="border-collapse: collapse;">
             <tr>
-                <th>Mã Ngành</th>
-                <th>Tên Ngành</th>
+                <th>Mã Đọc giả</th>
+                <th>Tên Đọc giả</th>
+                <th>Chức Vụ</th>
+                <th>Giới Tính</th>
+                <th>Năm Sinh</th>
+                <th>Địa Chỉ</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Quê Quán</th>
+                <th>Khoa</th>
+                <th>Ngành</th>
             </tr>
-            @foreach($listNganh as $nganh)
+            @foreach($listDocgia as $docgia)
             <tr>
-                <td>{{$nganh->manganh}}</td>
-                <td>{{$nganh->tennganh}}</td>
+                <td>{{$docgia->madocgia}}</td>
+                <td>{{$docgia->tendocgia}}</td>
+                <td>{{$docgia->chucvu}}</td>
+                <td>{{$docgia->gioitinh}}</td>
+                <td>{{$docgia->namsinh}}</td>
+                <td>{{$docgia->diachi}}</td>
+                <td>{{$docgia->sdt}}</td>
+                <td>{{$docgia->email}}</td>
+                <td>{{$docgia->quequan}}</td>
+                <td>{{$docgia->khoa->tenkhoa}}</td>
+                <td>{{$docgia->nganh->tennganh}}</td>
             </tr>
             @endforeach
         </table>

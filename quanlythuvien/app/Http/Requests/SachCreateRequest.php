@@ -27,17 +27,11 @@ class SachCreateRequest extends FormRequest
     {
         return [
             'masach'                => 'required|min:3|max:50|unique:qltv_sach', //tên table qtlv_sach
-
             'tensach'               => 'required|min:3|max:500',
-
             'tentacgia'             => 'required|min:3|max:200',
-
             'soluong'               => 'required',
-
             'anh'                   => 'required',
-
             'theloai_id'            => 'required',
-
             'nxb_id'                => 'required',
 
         ];

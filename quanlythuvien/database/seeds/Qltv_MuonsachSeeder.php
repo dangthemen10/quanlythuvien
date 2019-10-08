@@ -17,7 +17,7 @@ class Qltv_MuonsachSeeder extends Seeder
         $dsdocgia = DB::table('qltv_docgia')->pluck('id'); //SELECT id From qltv_docgia
         $dssach = DB::table('qltv_sach')->pluck('id'); //SELECT id From qltv_sach
         $dsthuthu = DB::table('qltv_thuthu')->pluck('id'); //SELECT id From qltv_thuthu
-        for ($i=1; $i <= 10; $i++) {
+        for ($i=1; $i <= 5; $i++) {
             array_push($list, [
                 'id'            => $i,
                 'mamuon'        => $faker->numerify('MaMuon_####'),

@@ -105,6 +105,22 @@
           </div>
         </div>
       </li>
+      <!-- start docgia -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDocgia" aria-expanded="true" aria-controls="collapseDocgia">
+            <i class="fas fa-users"></i>
+            <span>Đọc Giả</span>
+        </a>
+        <div id="collapseDocgia" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Chức năng đọc giả:</h6>
+                <a class="collapse-item" href="{{ route('backend.docgia.index') }}">Danh sách Đọc giả</a>
+                <a class="collapse-item" href="{{ route('backend.docgia.print') }}">In danh sách Đọc giả</a>
+                <a class="collapse-item" href="{{ route('backend.docgia.create') }}">Thêm mới</a>
+            </div>
+        </div>
+      </li>
+      <!-- end docgia -->
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

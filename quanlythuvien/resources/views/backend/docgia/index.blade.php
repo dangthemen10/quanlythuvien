@@ -1,32 +1,40 @@
 @extends('backend.layouts.master')
 @section('title')
-Quản Trị - Ngành Học
+Quản Trị - Đọc giả
 @endsection
 @section('feature-title')
-Danh Sách Ngành Học
+Danh Sách Đọc giả
 @endsection
 @section('content')
-<a href="{{ route('backend.nganh.create') }}" class="btn btn-primary">Thêm mới</a>
-<a href="{{ route('backend.nganh.print') }}" class="btn btn-success">In Danh Sách</a>
-<table class="table table-bordered table-hover">
+<a href="{{ route('backend.docgia.create') }}" class="btn btn-primary">Thêm mới</a>
+<a href="{{ route('backend.docgia.print') }}" class="btn btn-success">In Danh Sách</a>
+<table class="table table-bordered table-hover table-responsive">
     <thead>
         <tr class="table-success" >
-            <th>Mã Ngành</th>
-            <th>Tên Ngành</th>      
             <th colspan="2">Chức Năng</th>
+            <th>Mã Đọc giả</th>
+            <th>Tên Đọc giả</th>
+            <th>Ảnh</th>
+            <th>Khoa</th>
+            <th>Ngành</th>   
+            <th>Chức Vụ</th>
+            <th>Giới Tính</th>
+            <th>Năm Sinh</th>
+            <th>Địa Chỉ</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Quê Quán</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($listNganh as $nganh)
+        @foreach($listDocgia as $docgia)
         <tr>
-            <td>{{$nganh->manganh}}</td>
-            <td>{{$nganh->tennganh}}</td>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.nganh.edit', ['id'=>$nganh->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.docgia.edit', ['id'=>$docgia->id]) }}">Edit</a>
                 
             </td>
             <td>
-                <form name="frmDeleteNganh" id="frmDeleteNganh" method="post" action="{{ route('backend.nganh.destroy', ['id' => $nganh->id]) }}">
+                <form name="frmDeleteDocgia" id="frmDeleteDocgia" method="post" action="{{ route('backend.docgia.destroy', ['id' => $docgia->id]) }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="DELETE"/>
                     <button class="btn btn-danger btn-icon-split btn-delete">
@@ -37,6 +45,20 @@ Danh Sách Ngành Học
                     </button>
                 </form>
             </td>
+            <td>{{$docgia->madocgia}}</td>
+            <td>{{$docgia->tendocgia}}</td>
+            <td>
+                <img src="{{ asset('storage/uploads/'. $docgia->anh) }}" width="80px" height="80px"/>
+            </td>
+            <td>{{$docgia->khoa->tenkhoa}}</td>
+            <td>{{$docgia->nganh->tennganh}}</td>
+            <td>{{$docgia->chucvu}}</td>
+            <td>{{$docgia->gioitinh}}</td>
+            <td>{{$docgia->namsinh}}</td>
+            <td>{{$docgia->diachi}}</td>
+            <td>{{$docgia->sdt}}</td>
+            <td>{{$docgia->email}}</td>
+            <td>{{$docgia->quequan}}</td>
         </tr>
         @endforeach
     <tbody>
@@ -66,7 +88,7 @@ Danh Sách Ngành Học
                     )
 
                     //submit form
-                    $(this).parent('#frmDeleteNganh').submit();
+                    $(this).parent('#frmDeleteDocgia').submit();
                 }
                 })
         })
