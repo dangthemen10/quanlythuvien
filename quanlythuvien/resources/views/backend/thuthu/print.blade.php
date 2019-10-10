@@ -1,7 +1,7 @@
 @extends('print.layout.paper')
 
 @section('title')
-In danh sách Đọc giả
+In danh sách Thủ thư
 @endsection
 
 @section('paper-size')
@@ -33,15 +33,15 @@ A4
         <table border="0" width="100%" style="border-collapse: collapse;">
             <tr>
                 <td style="text-align: center;">
-                    <span style="font-weight: bold;font-size: 1.5em;">Danh Sách Đọc Giả</span>
+                    <span style="font-weight: bold;font-size: 1.5em;">Danh Sách Thủ Thư</span>
                 </td>
             </tr>
         </table>
 
         <table border="1" width="100%" style="border-collapse: collapse;">
             <tr>
-                <th>Mã Đọc giả</th>
-                <th>Tên Đọc giả</th>
+                <th>Mã Thủ thư</th>
+                <th>Tên Thủ thư</th>
                 <th>Chức Vụ</th>
                 <th>Giới Tính</th>
                 <th>Năm Sinh</th>
@@ -52,19 +52,19 @@ A4
                 <th>Khoa</th>
                 <th>Ngành</th>
             </tr>
-            @foreach($listDocgia as $docgia)
+            @foreach($listThuthu as $thuthu)
             <tr>
-                <td>{{$docgia->madocgia}}</td>
-                <td>{{$docgia->tendocgia}}</td>
-                <td>{{$docgia->chucvu}}</td>
-                <td>{{$docgia->gioitinh}}</td>
-                <td>{{$docgia->namsinh}}</td>
-                <td>{{$docgia->diachi}}</td>
-                <td>{{$docgia->sdt}}</td>
-                <td>{{$docgia->email}}</td>
-                <td>{{$docgia->quequan}}</td>
-                <td>{{$docgia->khoa->tenkhoa}}</td>
-                <td>{{$docgia->nganh->tennganh}}</td>
+                <td>{{$thuthu->mathuthu}}</td>
+                <td>{{$thuthu->tenthuthu}}</td>
+                <td>{{$thuthu->chucvu}}</td>
+                <td>{{$thuthu->gioitinh}}</td>
+                <td>{{$thuthu->namsinh}}</td>
+                <td>{{$thuthu->diachi}}</td>
+                <td>{{$thuthu->sdt}}</td>
+                <td>{{$thuthu->email}}</td>
+                <td>{{$thuthu->quequan}}</td>
+                <td>{{$thuthu->khoa->tenkhoa}}</td>
+                <td>{{$thuthu->nganh->tennganh}}</td>
             </tr>
             @endforeach
         </table>

@@ -63,3 +63,11 @@ Route::get('/admin/docgia/{id}/edit', 'Backend\DocgiaController@edit')->name('ba
 Route::post('/admin/docgia/{id}/update', 'Backend\DocgiaController@update')->name('backend.docgia.update');
 Route::delete('/admin/docgia/{id}', 'Backend\DocgiaController@destroy')->name('backend.docgia.destroy');
 Route::get('/admin/docgia/print', 'Backend\DocgiaController@print')->name('backend.docgia.print');
+//Route of Thủ thư
+Route::get('/admin/thuthu', 'Backend\ThuthuController@index')->name('backend.thuthu.index');
+Route::get('/admin/thuthu/create', 'Backend\ThuthuController@create')->name('backend.thuthu.create'); 
+Route::post('/admin/thuthu/store', 'Backend\ThuthuController@store')->name('backend.thuthu.store'); 
+Route::get('/admin/thuthu/{id}/edit', 'Backend\ThuthuController@edit')->name('backend.thuthu.edit');
+Route::post('/admin/thuthu/{id}/update', 'Backend\ThuthuController@update')->name('backend.thuthu.update');
+Route::delete('/admin/thuthu/{id}', 'Backend\ThuthuController@destroy')->name('backend.thuthu.destroy');
+Route::get('/admin/thuthu/print', 'Backend\ThuthuController@print')->name('backend.thuthu.print');

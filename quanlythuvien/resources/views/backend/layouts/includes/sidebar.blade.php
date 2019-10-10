@@ -121,6 +121,22 @@
         </div>
       </li>
       <!-- end docgia -->
+      <!-- start thuthu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThuthu" aria-expanded="true" aria-controls="collapseThuthu">
+            <i class="fas fa-user"></i>
+            <span>Thủ Thư</span>
+        </a>
+        <div id="collapseThuthu" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Chức năng thủ thư:</h6>
+                <a class="collapse-item" href="{{ route('backend.thuthu.index') }}">Danh sách Thủ thư</a>
+                <a class="collapse-item" href="{{ route('backend.thuthu.print') }}">In danh sách Thủ thư</a>
+                <a class="collapse-item" href="{{ route('backend.thuthu.create') }}">Thêm mới</a>
+            </div>
+        </div>
+      </li>
+      <!-- end thuthu -->
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
