@@ -71,3 +71,13 @@ Route::get('/admin/thuthu/{id}/edit', 'Backend\ThuthuController@edit')->name('ba
 Route::post('/admin/thuthu/{id}/update', 'Backend\ThuthuController@update')->name('backend.thuthu.update');
 Route::delete('/admin/thuthu/{id}', 'Backend\ThuthuController@destroy')->name('backend.thuthu.destroy');
 Route::get('/admin/thuthu/print', 'Backend\ThuthuController@print')->name('backend.thuthu.print');
+//Route of Mượn sách
+Route::get('/admin/muonsach', 'Backend\MuonsachController@index')->name('backend.muonsach.index');
+Route::get('/admin/docgiamuonsach', 'Backend\MuonsachController@show')->name('backend.muonsach.show');
+Route::get('/admin/muonsach/create', 'Backend\MuonsachController@create')->name('backend.muonsach.create'); 
+Route::post('/admin/muonsach/store', 'Backend\MuonsachController@store')->name('backend.muonsach.store'); 
+Route::get('/admin/muonsach/{id}/edit', 'Backend\MuonsachController@edit')->name('backend.muonsach.edit');
+Route::post('/admin/muonsach/{id}/update', 'Backend\MuonsachController@update')->name('backend.muonsach.update');
+Route::delete('/admin/muonsach/{id}', 'Backend\MuonsachController@destroy')->name('backend.muonsach.destroy');
+Route::get('/admin/muonsach/print', 'Backend\MuonsachController@print')->name('backend.muonsach.print');
+Route::get('/admin/muonsach/printdg', 'Backend\MuonsachController@printdg')->name('backend.muonsach.printdg');

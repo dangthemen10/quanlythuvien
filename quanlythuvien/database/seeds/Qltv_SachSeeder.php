@@ -19,7 +19,7 @@ class Qltv_SachSeeder extends Seeder
         $types = ["ĐẮC NHÂN TÂM", " ĐỜI THAY ĐỔI KHI CHÚNG TA THAY ĐỔI", "CÁCH NGHĨ ĐỂ THÀNH CÔNG", "7 THÓI QUEN ĐỂ THÀNH ĐẠT", "CUỘC SỐNG KHÔNG GIỚI HẠN", "NGƯỜI GIÀU CÓ NHẤT THÀNH BABYLON", "QUẲNG GÁNH LO ĐI MÀ VUI SỐNG", " BỘ SÁCH HẠT GIỐNG CHO TÂM HỒN", "TÌM KIẾM SỰ KHÔN NGOAN TỪ DARWIN ĐẾN MUNGER", "CHÂM NGÔN ĐẠO ĐỨC CỦA PUBLIUS SYRUS", "NHÀ GIẢ KIM", "TỐC ĐỘ CỦA NIỀM TIN", "THÓI QUEN THỨ 8", "ĐÁNH THỨC CON NGƯỜI PHI THƯỜNG TRONG BẠN", "LÀM CHỦ TƯ DUY THAY ĐỔI VẬN MỆNH"];
         $types1 = ["Hiếu", "Khang", "Hùng", "Tuấn", "Giang", "Anh", "Hà", "Kiều", "Phượng"];
         sort($types);
-        for ($i=1; $i <= 5; $i++) {
+        for ($i=1; $i <= 10; $i++) {
             array_push($list, [
                 'id'        => $i,
                 'masach'     => $faker->numerify('Sach_######'),

@@ -137,6 +137,23 @@
         </div>
       </li>
       <!-- end thuthu -->
+      <!-- start muonsach -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMuonsach" aria-expanded="true" aria-controls="collapseMuonsach">
+            <i class="fas fa-user"></i>
+            <span>Mượn Sách</span>
+        </a>
+        <div id="collapseMuonsach" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Chức năng mượn sách:</h6>
+                <a class="collapse-item" href="{{ route('backend.muonsach.index') }}">Danh sách Mượn sách</a>
+                <a class="collapse-item" href="{{ route('backend.muonsach.show') }}">Đọc giả mượn sách</a>
+                <a class="collapse-item" href="{{ route('backend.muonsach.print') }}">In danh sách Mượn sách</a>
+                <a class="collapse-item" href="{{ route('backend.muonsach.create') }}">Thêm mới</a>
+            </div>
+        </div>
+      </li>
+      <!-- end muonsach -->
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

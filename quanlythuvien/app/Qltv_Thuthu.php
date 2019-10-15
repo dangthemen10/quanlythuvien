@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Qltv_Thuthu extends Model
 {
-    public $timestamps = false;
+    public $timestamps = false; //Dùng để bỏ Updated_at và created_at nếu không có khi chạy sẽ bị lỗi 
     protected $table        = 'qltv_thuthu';
     protected $fillable     = ['mathuthu', 'tenthuthu', 'chucvu', 'gioitinh', 'namsinh', 'diachi', 'sdt', 'email', 'quequan', 'anh','khoa_id', 'nganh_id'];
     protected $guarded      = ['id'];

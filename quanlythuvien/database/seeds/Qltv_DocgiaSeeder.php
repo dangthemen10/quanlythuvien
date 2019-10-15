@@ -22,7 +22,7 @@ class Qltv_DocgiaSeeder extends Seeder
         $types3 = ["Nam", "Nữ"];
         $types4 = ["Giảng Viên", "Sinh Viên"];
         sort($types);
-        for ($i=1; $i <= 5; $i++) {
+        for ($i=1; $i <= 10; $i++) {
             array_push($list, [
                 'id'                => $i,
                 'madocgia'          => $faker->numerify('DG_######'),

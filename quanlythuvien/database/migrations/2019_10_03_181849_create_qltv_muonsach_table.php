@@ -17,8 +17,8 @@ class CreateQltvMuonsachTable extends Migration
             $table->increments('id');
             $table->string('mamuon', 50);
             $table->dateTime('ngaymuon');
-            $table->dateTime('hantra');
-            $table->decimal('soluong', 18, 0);
+            $table->tinyInteger('hantra');
+            $table->tinyInteger('soluong');
             $table->dateTime('ngaytra');
             $table->tinyInteger('tinhtrang'); // 0 chưa trả 1 đã trả 2 quá hạn
 

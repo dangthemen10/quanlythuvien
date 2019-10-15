@@ -1,0 +1,108 @@
+@extends('backend.layouts.master')
+
+@section('title')
+Quản Trị - Danh Sách Mượn Sách
+@endsection
+
+@section('feature-title')
+Danh Sách Mượn Sách
+@endsection
+
+@section('content')
+<a href="{{ route('backend.muonsach.create') }}" class="btn btn-primary">Thêm mới</a>
+<a href="{{ route('backend.muonsach.print') }}" class="btn btn-success">In danh sách</a>
+<table class="table table-bordered table-striped table-responsive">
+    <thead>
+        <tr>
+            <th>Mã Mượn</th>
+            <th>Thông Tin đọc giả</th>
+            <th>Thông Tin thủ thư</th>
+            <th>Ngày Mượn</th>
+            <th>Ngày dự định trả</th>
+            <th>Thông tin tóm tắt sách</th>
+            <th>Tình trạng</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($listMuonsach as $muonsach)
+        <tr>
+            <td>{{ $muonsach->mamuon }}</td>
+            <td>
+                Họ tên: <b>{{ $muonsach->tendocgia }}</b><br />
+                Chức vụ: {{ $muonsach->chucvu }}<br /> 
+                Giới tính: {{ $muonsach->gioitinh }}<br /> 
+                Năm Sinh: {{ $muonsach->namsinh }}<br /> 
+                Email: {{ $muonsach->email }}<br /> 
+                Điện thoại: {{ $muonsach->sdt }}<br /> 
+                Địa chỉ: {{ $muonsach->diachi }}<br /> 
+            </td>
+            <td>
+                Mã Thủ Thư: {{ $muonsach->mathuthu }}<br/>
+                Họ tên: <b>{{ $muonsach->tenthuthu }}</b><br />
+            </td>
+            <td>{{$muonsach->ngaymuon}}</td>
+            <td>{{$muonsach->ngaytra}}</td>
+            <td>
+                Tên sách: <b>{{ $muonsach->tensach }}</b><br />
+                Tên tác giả: {{ $muonsach->tentacgia }}<br />
+                Tên thể loại: {{ $muonsach->tentheloai }}<br />
+                Tên nhà xuất bản: {{ $muonsach->tennxb }}
+            </td>
+            <td>
+                @if($muonsach->tinhtrang == 0)
+                    <span class="badge badge-primary">Đang mượn sách</span>
+                @elseif($muonsach->tinhtrang == 2)
+                    <span class="badge badge-danger">Hết hạn mượn</span>
+                @else
+                    <span class="badge badge-success">Đã trả sách</span>
+                @endif
+            </td>
+            <td>
+                <a class="btn btn-primary" href="{{ route('backend.muonsach.edit', ['id'=>$muonsach->id]) }}">Edit</a>
+            </td>
+            <td>
+                <form name="frmDeleteMuonsach" id="frmDeleteMuonsach" method="post" action="{{ route('backend.muonsach.destroy', ['id' => $muonsach->id]) }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="_method" value="DELETE"/>
+                    <button class="btn btn-danger btn-icon-split btn-delete">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+@endsection
+@section('custom-scripts')
+<script>
+    $(document).ready(function(){
+        $('.btn-delete').click(function(e){
+            e.preventDefault();
+            Swal.fire({
+                title: 'Bạn Có Chắc Xóa Không?',
+                text: "Nếu bạn xóa thì dữ liệu này sẽ không phục hồi được!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Đồng ý!'
+                }).then((result) => {
+                if (result.value) {
+                    Swal.fire(
+                    'Xóa Dữ liệu!',
+                    'Dữ liệu của bạn đã được xóa',
+                    'Thành Công'
+                    )
+
+                    //submit form
+                    $(this).parent('#frmDeleteMuonsach').submit();
+                }
+                })
+        })
+    })
+</script>
+@endsection
