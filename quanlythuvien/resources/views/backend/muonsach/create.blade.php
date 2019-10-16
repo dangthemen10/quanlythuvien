@@ -51,55 +51,42 @@ Thêm Mới Mượn Sách
         </select>
       </div>
     </div>
-    <div class="col-md-12">
-      <div class="form-group">
-        <label for="sach_id">Sách Mượn</label>
-        <select id="sach_id" name="sach_id" class="form-control">
-          @foreach($listSach as $sach)
-          <option value="{{ $sach->id }}">{{ $sach->tensach }}</option>
-          @endforeach
-        </select>
-      </div>
+  </div>
+  <div class="card border-success text-white bg-gradient-primary mb-3">
+    <div class="card-header bg-gradient-primary">
+      <h6 class="card-subtitle mb-2">Chọn Sách Mượn</h6>
     </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="mamuon">Mã Mượn</label>
-        <input type="text" class="form-control" id="mamuon" name="mamuon" aria-describedby="mamuonHelp" placeholder="Nhập mã mượn . . . " value="{{ old('mamuon') }}">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="ngaymuon">Ngày Mượn</label>
-        <input type="text" class="form-control" id="ngaymuon" name="ngaymuon" aria-describedby="ngaymuonHelp" placeholder="Vd: 30/11/2019 " value="{{ old('ngaymuon') }}">
-      </div>
-    </div>   
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="hantra">Hạn Trả</label>
-        <input type="text" class="form-control" id="hantra" name="hantra" aria-describedby="hantraHelp" placeholder="Nhập hạn trả . . . " value="{{ old('hantra') }}">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="soluong">Số Lượng</label>
-        <input type="text" class="form-control" id="soluong" name="soluong" aria-describedby="soluongHelp" placeholder="Nhập số lượng . . . " value="{{ old('soluong') }}">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="ngaytra">Ngày Trả</label>
-        <input type="text" class="form-control" id="ngaytra" name="ngaytra" aria-describedby="ngaytraHelp" placeholder="Vd: 12/11/2019 " value="{{ old('ngaytra') }}">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="tinhtrang">Tình Trạng</label>
-        <select id="tinhtrang" name="tinhtrang" class="form-control">
-          <option value="{{ 0 }}"selected>Đang Mượn Sách</option>
-          <option value="{{ 1 }}">Đã Trả Sách</option>
-          <option value="{{ 2 }}">Quá Hạn Mượn</option>
-        </select>
-      </div>
+    <div class="card-body">
+      <table class="table table-bordered text-white">
+        <thead>
+          <tr>
+            <th style="width: 40%;">Sách Mượn</th>
+            <th style="width: 20%;">Mã Mượn</th>
+            <th style="width: 20%;">Số Lượng</th>
+            <th style="width: 20%;">Hạn Trả</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select class="form-control" name="sach_id" id="sach_id">
+                @foreach($listSach as $sach)
+                <option value="{{ $sach->id }}">{{ $sach->tensach }}</option>
+                @endforeach
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" name="mamuon" id="mamuon" />
+            </td>
+            <td>
+              <input type="text" class="form-control" name="soluong" id="soluong" />
+            </td>
+            <td>
+              <input type="text" class="form-control" name="hantra" id="hantra" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <a href="{{ route('backend.muonsach.index') }}" class="btn btn-success">Quay về</a>
@@ -117,19 +104,10 @@ Thêm Mới Mượn Sách
           minlength: 3,
           maxlength: 50
         },
-        ngaymuon: {
-          required: true
-        },
         hantra: {
           required: true
         },
         soluong: {
-          required: true
-        },
-        ngaytra: {
-          required: true
-        },
-        tinhtrang: {
           required: true
         },
         sach_id: {
@@ -148,20 +126,11 @@ Thêm Mới Mượn Sách
           minlength: "Mã mượn phải có ít nhất 3 ký tự",
           maxlength: "Mã mượn không được vượt quá 50 ký tự"
         },
-        ngaymuon: {
-          required: "Vui lòng nhập ngày mượn sách"
-        },
         hantra: {
           required: "Vui lòng nhập hạn trả sách"
         },
         soluong: {
           required: "Vui lòng nhập số lượng sách mượn"
-        },
-        ngaytra: {
-          required: "Vui lòng nhập ngày trả sách"
-        },
-        tinhtrang: {
-          required: "Vui lòng chọn tình trạng sách"
         },
         sach_id: {
           required: "Vui lòng chọn sách mượn"

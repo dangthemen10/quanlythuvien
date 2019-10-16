@@ -21,7 +21,7 @@ Danh Sách Mượn Sách
             <th>Ngày dự định trả</th>
             <th>Thông tin tóm tắt sách</th>
             <th>Tình trạng</th>
-            <th>Chức năng</th>
+            <th colspan="2">Chức năng</th>
         </tr>
     </thead>
     <tbody>
@@ -59,16 +59,14 @@ Danh Sách Mượn Sách
                 @endif
             </td>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.muonsach.edit', ['id'=>$muonsach->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.muonsach.edit', ['id'=>$muonsach->id]) }}"><i class="far fa-edit"></i></a>
             </td>
             <td>
                 <form name="frmDeleteMuonsach" id="frmDeleteMuonsach" method="post" action="{{ route('backend.muonsach.destroy', ['id' => $muonsach->id]) }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="DELETE"/>
-                    <button class="btn btn-danger btn-icon-split btn-delete">
-                        <span class="icon text-white-50">
+                    <button class="btn btn-danger btn-delete">
                             <i class="fas fa-trash"></i>
-                        </span>
                     </button>
                 </form>
             </td>
@@ -76,6 +74,7 @@ Danh Sách Mượn Sách
         @endforeach
     </tbody>
 </table>
+{{ $users->links() }}
 @endsection
 @section('custom-scripts')
 <script>

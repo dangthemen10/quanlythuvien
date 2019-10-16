@@ -40,8 +40,8 @@ class MuonsachController extends Controller
 EOT; //chuỗi có xuống dòng
         // Raw SQL
         $listMuonsach = DB::select($sql);
-        //dd($listOrders);
-        return view('backend.muonsach.index')
+        $users= DB::table('qltv_muonsach')->paginate(10);
+        return view('backend.muonsach.index',['users' => $users])
             ->with('listMuonsach', $listMuonsach);
         // $list = Qltv_Muonsach::paginate(10); // Phân trang cho dữ liệu
         // $users= DB::table('qltv_muonsach')->paginate(10); // Hiển thị Phân Trang
@@ -73,13 +73,15 @@ EOT; //chuỗi có xuống dòng
      */
     public function store(MuonsachCreateRequest $request)
     {
+        $dt = Carbon::now('Asia/Ho_Chi_Minh');
         $muonsach = new Qltv_Muonsach();
         $muonsach->mamuon      = $request->mamuon;
         $muonsach->soluong = $request->soluong; // 2 | 20
         $muonsach->hantra = $request->hantra;
-        $muonsach->ngaymuon = Carbon::now();
-        $muonsach->ngaytra = Carbon::now();
-        $muonsach->tinhtrang    = $request->tinhtrang;
+        $muonsach->ngaymuon = $dt->toDateTimeString();
+        $muonsach->ngaytra = $dt->addDays($request->hantra);
+        //$muonsach->ngaytra = Carbon::now();
+        $muonsach->tinhtrang    = '0';
         $muonsach->thuthu_id    = $request->thuthu_id;
         $muonsach->docgia_id       = $request->docgia_id;
         $muonsach->sach_id       = $request->sach_id;

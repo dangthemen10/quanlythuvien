@@ -25,11 +25,8 @@ class MuonsachCreateRequest extends FormRequest
     {
         return [
             'mamuon'                => 'required|min:3|max:50|unique:qltv_muonsach', //tên table qtlv_muonsach
-            'ngaymuon'              => 'required',
             'hantra'                => 'required',
             'soluong'               => 'required',
-            'ngaytra'               => 'required',
-            'tinhtrang'             => 'required',
             'thuthu_id'             => 'required',
             'docgia_id'             => 'required',
             'sach_id'               => 'required',
@@ -42,11 +39,8 @@ class MuonsachCreateRequest extends FormRequest
             'mamuon.max'           => 'Vui lòng nhập mã mượn tối đa 50 ký tự',
             'mamuon.unique'        => 'Mã mượn này đã tồn tại. Vui lòng nhập mã khác',
 
-            'ngaymuon.required'    => 'Vui lòng nhập ngày mượn',
             'hantra.required'      => 'Vui lòng nhập hạn trả sách',
             'soluong.required'     => 'Vui lòng nhập số lượng sách mượn',
-            'ngaytra.required'     => 'Vui lòng nhập ngày trả sách',
-            'tinhtrang.required'   => 'Vui lòng nhập tình trạng sách',
             'thuthu_id.required'   => 'Vui lòng chọn thủ thư cho mượn sách',
             'docgia_id.required'   => 'Vui lòng chọn đọc giả mượn sách',
             'sach_id.required'     => 'Vui lòng chọn sách mượn'
