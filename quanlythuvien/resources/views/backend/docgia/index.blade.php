@@ -30,7 +30,7 @@ Danh Sách Đọc giả
         @foreach($listDocgia as $docgia)
         <tr>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.docgia.edit', ['id'=>$docgia->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.docgia.edit', ['id'=>$docgia->id]) }}"><i class="far fa-edit"></i></a>
                 
             </td>
             <td>
@@ -41,7 +41,6 @@ Danh Sách Đọc giả
                         <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                         </span>
-                        <span class="text">Delete</span>
                     </button>
                 </form>
             </td>

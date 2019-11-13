@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -140,7 +140,7 @@
       <!-- start muonsach -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMuonsach" aria-expanded="true" aria-controls="collapseMuonsach">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-book-reader"></i>
             <span>Mượn Sách</span>
         </a>
         <div id="collapseMuonsach" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

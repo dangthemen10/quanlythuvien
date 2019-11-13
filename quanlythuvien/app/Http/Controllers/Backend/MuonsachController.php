@@ -9,6 +9,9 @@ use App\Qltv_Thuthu;
 use App\Qltv_Docgia;
 use App\Qltv_Sach;
 use Carbon\Carbon;
+use App\Notice;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB; 
 use App\Http\Requests\MuonsachCreateRequest; 
 
@@ -39,16 +42,12 @@ class MuonsachController extends Controller
             s.tensach, s.tentacgia, tl.tentheloai, xb.tennxb
 EOT; //chuỗi có xuống dòng
         // Raw SQL
-        $listMuonsach = DB::select($sql);
-        $users= DB::table('qltv_muonsach')->paginate(10);
-        return view('backend.muonsach.index',['users' => $users])
-            ->with('listMuonsach', $listMuonsach);
-        // $list = Qltv_Muonsach::paginate(10); // Phân trang cho dữ liệu
-        // $users= DB::table('qltv_muonsach')->paginate(10); // Hiển thị Phân Trang
-        // return view('backend.muonsach.index',['users' => $users])
-        //     ->with('listMuonsach', $list);
-    }
 
+        $list = DB::select($sql); // Phân trang cho dữ liệu
+        //$users= DB::table('qltv_muonsach'); // Hiển thị Phân Trang
+        return view('backend.muonsach.index')
+            ->with('listMuonsach', $list);
+    }
     /**
      * Show the form for creating a new resource.
      *

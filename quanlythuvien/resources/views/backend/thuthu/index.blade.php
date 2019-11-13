@@ -30,7 +30,7 @@ Danh Sách Thủ Thư
         @foreach($listThuthu as $thuthu)
         <tr>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.thuthu.edit', ['id'=>$thuthu->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.thuthu.edit', ['id'=>$thuthu->id]) }}"><i class="far fa-edit"></i></a>
                 
             </td>
             <td>
@@ -41,7 +41,6 @@ Danh Sách Thủ Thư
                         <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                         </span>
-                        <span class="text">Delete</span>
                     </button>
                 </form>
             </td>

@@ -22,7 +22,7 @@ Danh Sách Khoa
             <td>{{$khoa->makhoa}}</td>
             <td>{{$khoa->tenkhoa}}</td>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.khoa.edit', ['id'=>$khoa->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.khoa.edit', ['id'=>$khoa->id]) }}"><i class="far fa-edit"></i></a>
                 
             </td>
             <td>
@@ -33,7 +33,6 @@ Danh Sách Khoa
                         <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                         </span>
-                        <span class="text">Delete</span>
                     </button>
                 </form>
             </td>

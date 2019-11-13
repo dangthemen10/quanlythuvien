@@ -31,11 +31,8 @@ Danh Sách Mượn Sách
             <td>
                 Họ tên: <b>{{ $muonsach->tendocgia }}</b><br />
                 Chức vụ: {{ $muonsach->chucvu }}<br /> 
-                Giới tính: {{ $muonsach->gioitinh }}<br /> 
-                Năm Sinh: {{ $muonsach->namsinh }}<br /> 
                 Email: {{ $muonsach->email }}<br /> 
                 Điện thoại: {{ $muonsach->sdt }}<br /> 
-                Địa chỉ: {{ $muonsach->diachi }}<br /> 
             </td>
             <td>
                 Mã Thủ Thư: {{ $muonsach->mathuthu }}<br/>
@@ -74,7 +71,6 @@ Danh Sách Mượn Sách
         @endforeach
     </tbody>
 </table>
-{{ $users->links() }}
 @endsection
 @section('custom-scripts')
 <script>

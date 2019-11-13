@@ -22,7 +22,7 @@ Danh Sách Thể Loại Sách
             <td>{{$theloai->matheloai}}</td>
             <td>{{$theloai->tentheloai}}</td>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.theloai.edit', ['id'=>$theloai->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.theloai.edit', ['id'=>$theloai->id]) }}"><i class="far fa-edit"></i></a>
                 
             </td>
             <td>
@@ -33,7 +33,6 @@ Danh Sách Thể Loại Sách
                         <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                         </span>
-                        <span class="text">Delete</span>
                     </button>
                 </form>
             </td>

@@ -17,15 +17,18 @@ A4
     <article>
         <table border="0" width="100%" style="border-collapse: collapse;">
             <tr>
-                <td style="width:150px;">
-                    <img src="{{ asset('img/OlYx2fY.png') }}" style="width:150px;height:150px;" />
+                <td style="text-align: left;vertical-align: middle;">
+                    <span style="font-weight: bold;font-size: 1.2em;">TRƯỜNG ĐẠI HỌC CẦN THƠ</span> </br>
+                    <span style="font-size: 0.9em;"><b>Địa Chỉ</b>: Khu II, Đường 3/2, P. Xuân Khánh, Q. Ninh Kiều, TP. Cần Thơ</span> </br>
+                    <span style="font-size: 0.9em;"><b>Hotline</b>:  (84-292) 3832663; <b>Fax</b>:  (84-292) 3838474</span> </br>
+                    <span style="font-size: 0.9em;"><b>Email</b>:   dhct@ctu.edu.vn</span> </br>
+                    <span style="font-size: 0.9em;">-----------------------------</span> </br>
                 </td>
                 <td style="text-align: right;vertical-align: middle;">
-                    <span style="font-weight: bold;font-size: 2em;">HẢI ĐĂNG COMPANY</span> </br>
-                    <span style="font-weight: bold;font-size: 1em;">Địa Chỉ: Đường 3/2, P. Xuân Khánh, Q.Ninh Kiều, TP. Cần Thơ</span> </br>
-                    <span style="font-weight: bold;font-size: 1em;">Email: phanhaidangkgumt@gmail.com</span></br>
-                    <span style="font-weight: bold;font-size: 1em;">Hotline: 0947223877</span> 
-                    
+                    <span style="font-weight: bold;font-size: 1em;">Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</span> </br>
+                    <span style="font-size: 1em;padding-right: 30px;">Độc lập - Tự do - Hạnh phúc</span> </br></br>
+                    <span style=" font-size: 1em;">.........,Ngày......Tháng......Năm......</span> </br>
+                    <span style=" padding-right: 70px;">-------------------</span> </br>
                 </td>
             </tr>
         </table>
@@ -33,15 +36,15 @@ A4
         <table border="0" width="100%" style="border-collapse: collapse;">
             <tr>
                 <td style="text-align: center;">
-                    <span style="font-weight: bold;font-size: 1.5em;">Danh Sách Khoa</span>
+                    <span style="font-weight: bold;font-size: 1.2em;">DANH SÁCH CÁC KHOA</span>
                 </td>
             </tr>
         </table>
 
         <table border="1" width="100%" style="border-collapse: collapse;">
             <tr>
-                <td>Mã Khoa</td>
-                <td>Tên Khoa</td>
+                <th>Mã Khoa</th>
+                <th>Tên Khoa</th>
             </tr>
             @foreach($listKhoa as $khoa)
             <tr>

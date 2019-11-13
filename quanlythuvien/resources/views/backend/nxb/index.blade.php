@@ -22,7 +22,7 @@ Danh Sách Nhà Xuất Bản
             <td>{{$nxb->manxb}}</td>
             <td>{{$nxb->tennxb}}</td>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.nxb.edit', ['id'=>$nxb->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.nxb.edit', ['id'=>$nxb->id]) }}"><i class="far fa-edit"></i></a>
                 
             </td>
             <td>
@@ -33,7 +33,6 @@ Danh Sách Nhà Xuất Bản
                         <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                         </span>
-                        <span class="text">Delete</span>
                     </button>
                 </form>
             </td>

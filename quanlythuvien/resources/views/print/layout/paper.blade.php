@@ -10,7 +10,7 @@
 
     <!-- Load paper.css for happy printing -->
     <link rel="stylesheet" href="{{ asset('vendor/paper-css/paper.min.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('vendor/paper-css/custom-paper.css') }}">
     <!-- Set page size here: A5, A4 or A3 -->
     <!-- Set also "landscape" if you need -->
     <style>

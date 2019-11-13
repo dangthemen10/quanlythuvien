@@ -11,6 +11,9 @@ class Qltv_Muonsach extends Model
     protected $fillable     = ['mamuon', 'ngaymuon', 'hantra', 'soluong', 'ngaytra', 'tinhtrang', 'thuthu_id', 'docgia_id', 'sach_id'];
     protected $guarded      = ['id'];
     protected $primaryKey   = 'id';
+    public function phantrang(){
+    	return Qltv_Muonsach::paginate(5);
+    }
     //Tạo quan hệ vs docgia, thuthu và sach
     public function thuthu(){
         return $this->belongsTo('App\Qltv_Thuthu', 'thuthu_id', 'id');

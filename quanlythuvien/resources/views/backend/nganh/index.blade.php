@@ -22,7 +22,7 @@ Danh Sách Ngành Học
             <td>{{$nganh->manganh}}</td>
             <td>{{$nganh->tennganh}}</td>
             <td>
-                <a class="btn btn-primary" href="{{ route('backend.nganh.edit', ['id'=>$nganh->id]) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('backend.nganh.edit', ['id'=>$nganh->id]) }}"><i class="far fa-edit"></i></a>
                 
             </td>
             <td>
@@ -33,7 +33,6 @@ Danh Sách Ngành Học
                         <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                         </span>
-                        <span class="text">Delete</span>
                     </button>
                 </form>
             </td>
