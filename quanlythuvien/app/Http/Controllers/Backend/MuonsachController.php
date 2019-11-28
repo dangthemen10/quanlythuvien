@@ -78,7 +78,7 @@ EOT; //chuỗi có xuống dòng
         $muonsach->soluong = $request->soluong; // 2 | 20
         $muonsach->hantra = $request->hantra;
         $muonsach->ngaymuon = $dt->toDateTimeString();
-        $muonsach->ngaytra = $dt->addDays($request->hantra);
+        $muonsach->ngaytra = $dt->addDays($request->hantra);// lấy ngày mượn hiện tại cộng với hạn trả ra ngày trả
         //$muonsach->ngaytra = Carbon::now();
         $muonsach->tinhtrang    = '0';
         $muonsach->thuthu_id    = $request->thuthu_id;

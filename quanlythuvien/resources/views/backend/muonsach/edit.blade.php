@@ -1,11 +1,11 @@
 @extends('backend.layouts.master')
 
 @section('title')
-Quản trị - Sửa Đơn hàng
+Quản trị - Chỉnh Sửa Mượn Sách
 @endsection
 
 @section('feature-title')
-Sửa Đơn hàng
+Chỉnh Sửa Mượn Sách
 @endsection
 
 @section('content')

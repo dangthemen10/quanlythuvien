@@ -14,7 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//dashboard
+Route::get('/admin/dashboard', 'Backend\PageController@dashboard')->name('backend.page.dashboard');
 //Route of thể loại sách
 Route::get('/admin/theloaisach', 'Backend\TheloaiController@index')->name('backend.theloai.index');
 Route::get('/admin/theloai/create', 'Backend\TheloaiController@create')->name('backend.theloai.create'); 
@@ -81,3 +82,10 @@ Route::post('/admin/muonsach/{id}/update', 'Backend\MuonsachController@update')-
 Route::delete('/admin/muonsach/{id}', 'Backend\MuonsachController@destroy')->name('backend.muonsach.destroy');
 Route::get('/admin/muonsach/print', 'Backend\MuonsachController@print')->name('backend.muonsach.print');
 Route::get('/admin/muonsach/printdg', 'Backend\MuonsachController@printdg')->name('backend.muonsach.printdg');
+//AJAX nhờ JS gửi yêu cầu
+//api là action trả về chuẩn json
+Route::get('/admin/api/getProductCount', 'Backend\Api\ApiController@getProductCount')->name('backend.api.getProductCount');
+Route::get('/admin/api/getDocgiaCount', 'Backend\Api\ApiController@getDocgiaCount')->name('backend.api.getDocgiaCount');
+Route::get('/admin/api/getMuonsachCount', 'Backend\Api\ApiController@getMuonsachCount')->name('backend.api.getMuonsachCount');
+Route::get('/admin/api/getThuthuCount', 'Backend\Api\ApiController@getThuthuCount')->name('backend.api.getThuthuCount');
+Route::get('/admin/api/getStatiticsCategoryProductCount', 'Backend\Api\ApiController@getStatiticsCategoryProductCount')->name('backend.api.getStatiticsCategoryProductCount');

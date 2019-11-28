@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('backend.page.dashboard') }}">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-school"></i>
         </div>
@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('backend.page.dashboard') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Màn Hình Quản Trị</span></a>
       </li>
@@ -31,7 +31,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="true" aria-controls="collapseCategories">
             <i class="fas fa-bookmark"></i>
-            <span>Thể Loại Sách</span>
+            <span>Quản lý Thể Loại Sách</span>
         </a>
         <div id="collapseCategories" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -47,7 +47,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSuppliers" aria-expanded="true" aria-controls="collapseSuppliers">
             <i class="fas fa-building"></i>
-            <span>Nhà Xuất Bản</span>
+            <span>Quản lý Nhà Xuất Bản</span>
         </a>
         <div id="collapseSuppliers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -63,7 +63,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKhoa" aria-expanded="true" aria-controls="collapseKhoa">
             <i class="fas fa-university"></i>
-            <span>Khoa</span>
+            <span>Quản lý Khoa</span>
         </a>
         <div id="collapseKhoa" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -79,7 +79,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNganh" aria-expanded="true" aria-controls="collapseNganh">
             <i class="fas fa-code-branch"></i>
-            <span>Ngành</span>
+            <span>Quản lý Ngành</span>
         </a>
         <div id="collapseNganh" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -94,7 +94,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-book"></i>
-          <span>Sách</span>
+          <span>Quản lý Sách</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -109,7 +109,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDocgia" aria-expanded="true" aria-controls="collapseDocgia">
             <i class="fas fa-users"></i>
-            <span>Đọc Giả</span>
+            <span>Quản lý Đọc Giả</span>
         </a>
         <div id="collapseDocgia" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -125,7 +125,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThuthu" aria-expanded="true" aria-controls="collapseThuthu">
             <i class="fas fa-user"></i>
-            <span>Thủ Thư</span>
+            <span>Quản lý Thủ Thư</span>
         </a>
         <div id="collapseThuthu" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -141,7 +141,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMuonsach" aria-expanded="true" aria-controls="collapseMuonsach">
             <i class="fas fa-book-reader"></i>
-            <span>Mượn Sách</span>
+            <span>Quản lý Mượn Sách</span>
         </a>
         <div id="collapseMuonsach" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
